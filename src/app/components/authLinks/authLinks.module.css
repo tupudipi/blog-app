@@ -1,3 +1,34 @@
 .link{
     cursor: pointer;
 }
+
+.burger {
+    width: 20px;
+    height: 16px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--textColor);
+}
+
+.responsiveMenu{
+    position: absolute;
+    top: 100px;
+    left: 0;
+}
+
+@media screen and (max-width: 640px) {
+    .burger {
+        display: flex;
+    }
+
+    .link {
+        display: none;
+    }
+}
