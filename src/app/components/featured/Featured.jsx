@@ -8,7 +8,7 @@ const Featured = () => {
         <strong className={styles.bold}>Hey, Cico here!</strong>
       </h1>
       <p className={styles.subtitle}>
-      Discover my stories and creative ideas about fish pate and laser pointers.
+      Discover what I have to say about fish pâté and laser pointers.
       </p>
 
       <div className={styles.post}>
