@@ -1,3 +1,10 @@
-.container{
+.container {
+    margin-top: 60px;
     flex: 2;
+}
+
+.subtitle {
+    color: gray;
+    font-size: 16px;
+    font-weight: 400;
 }
