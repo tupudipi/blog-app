@@ -52,6 +52,21 @@ model User {
   posts          Post[]
 }
 
+model Post {
+  id        String    @id @default(cuid()) @map("_id")
+  createdAt DateTime  @default(now())
+  slug      String    @unique
+  title     String
+  desc      String
+  img       String?
+  views     Int       @default(0)
+  cat       Category? @relation(fields: [catSlug], references: [slug])
+  catSlug   String
+  userEmail String
+  user      User      @relation(fields: [userEmail], references: [email])
+  comments  Comment[]
+}
+
 model VerificationToken {
   identifier String   @id @map("_id")
   token      String   @unique
@@ -66,21 +81,6 @@ model Category {
   title String
   image String?
   posts Post[]
-}
-
-model Post {
-  id        String    @id @default(cuid()) @map("_id")
-  createdAt DateTime  @default(now())
-  slug      String    @unique
-  title     String
-  desc      String
-  img       String?
-  views     Int       @default(0)
-  cat       Category? @relation(fields: [catSlug], references: [slug])
-  catSlug   String
-  userEmail String
-  user      User      @relation(fields: [userEmail], references: [email])
-  comments  Comment[]
 }
 
 model Comment {

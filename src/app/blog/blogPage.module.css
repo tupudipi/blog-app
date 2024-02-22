@@ -1,11 +1,36 @@
 .title {
-background-color: #6bd5ffde;
 color: white;
 padding: 5px 10px;
 text-align: center;
+text-transform: capitalize;
 }
 
 .content {
     display: flex;
     gap: 50px;
 }
+
+.title.style{
+    background-color: #6bd5ffde;
+}
+
+.title.coding{
+    background-color: #5e4fffde;
+}
+
+.title.culture{
+    background-color: #ffb04fde;
+}
+
+.title.travel {
+    background-color: #ff7957de;
+}
+
+.title.leisure{
+    background-color: #da85c7de;
+}
+
+.title.food{
+    background-color: #7fb881de;
+}
+
