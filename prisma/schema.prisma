@@ -50,6 +50,7 @@ model User {
   sessions      Session[]
   comments      Comment[]
   posts          Post[]
+  role          String    @default("user")
 }
 
 model Post {

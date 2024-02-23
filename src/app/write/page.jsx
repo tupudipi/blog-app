@@ -16,13 +16,34 @@ import { app } from "@/utils/firebase";
 import ReactQuill from "react-quill";
 
 const WritePage = () => {
-    const { status } = useSession();
+    const [role, setRole] = useState(null);
+    const { status, data = {} } = useSession();
+    const { user } = data || {};
     const router = useRouter();
     const [file, setFile] = useState(null);
     const [media, setMedia] = useState("");
     const [value, setValue] = useState("");
     const [title, setTitle] = useState("");
     const [catSlug, setCatSlug] = useState("");
+
+      
+    useEffect(() => {
+        const fetchRole = async () => {
+          if (status === 'authenticated') {
+            try {
+              const res = await fetch(`/api/userRole?email=${user?.email}`);
+              const data = await res.json();
+              setRole(data.role);
+            } catch (err) {
+              console.log(err);
+            }
+          }
+        };
+    
+        fetchRole();
+      }, [status, user]);
+    
+      console.log('role', role);
 
     useEffect(() => {
         const storage = getStorage(app);
@@ -63,7 +84,7 @@ const WritePage = () => {
         return <div className={styles.loading}>Loading...</div>;
     }
 
-    if (status === "unauthenticated") {
+    if (status === "unauthenticated" || role !== "admin") {
         router.push("/");
     }
 
