@@ -14,33 +14,18 @@ import {
 } from "firebase/storage";
 import { app } from "@/utils/firebase";
 import ReactQuill from "react-quill";
+import { UserRoleContext } from "@/context/UserContext";
+import { useContext } from "react";
 
 const WritePage = () => {
-    const [role, setRole] = useState(null);
     const { status, data = {} } = useSession();
-    const { user } = data || {};
     const router = useRouter();
     const [file, setFile] = useState(null);
     const [media, setMedia] = useState("");
     const [value, setValue] = useState("");
     const [title, setTitle] = useState("");
     const [catSlug, setCatSlug] = useState("");
-
-      
-    useEffect(() => {
-        const fetchRole = async () => {
-          if (status === 'authenticated') {
-            try {
-              const res = await fetch(`/api/userRole?email=${user?.email}`);
-              const data = await res.json();
-              setRole(data.role);
-            } catch (err) {
-            }
-          }
-        };
-    
-        fetchRole();
-      }, [status, user]);
+    const { role } = useContext(UserRoleContext);
     
     useEffect(() => {
         const storage = getStorage(app);

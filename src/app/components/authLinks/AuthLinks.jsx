@@ -1,31 +1,16 @@
 "use client"
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import styles from "./authLinks.module.css";
 import Link from 'next/link';
 import { signOut, useSession } from "next-auth/react";
+import { UserRoleContext } from "@/context/UserContext";
 
 function AuthLinks() {
 
   const [open, setOpen] = useState(false)
-  const [role, setRole] = useState(null);
   const { status, data = {} } = useSession();
-  const { user } = data || {};
-
-  useEffect(() => {
-    const fetchRole = async () => {
-      if (status === 'authenticated') {
-        try {
-          const res = await fetch(`/api/userRole?email=${user?.email}`);
-          const data = await res.json();
-          setRole(data.role);
-        } catch (err) {
-        }
-      }
-    };
-
-    fetchRole();
-  }, [status, user]);
+  const {role} = useContext(UserRoleContext);
 
   return <>
     {status === 'unauthenticated' ? (
