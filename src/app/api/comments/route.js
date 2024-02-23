@@ -1,3 +1,4 @@
+import { getAuthSession } from "@/utils/auth";
 import prisma from "@/utils/connect";
 import { NextResponse } from "next/server";
 
@@ -16,5 +17,28 @@ export const GET = async (req) => {
     } catch (err) {
         console.log(err);
         return new NextResponse(JSON.stringify({ error: 'Internal Server Error' }), { status: 500 });
+    }
+}
+
+export const POST = async (req) => {
+    const session = await getAuthSession();
+    if (!session) {
+        return new NextResponse(JSON.stringify({ error: 'Unauthorized' }), { status: 401 });
+    }
+
+    try {
+        const body = await req.json();
+
+        // Validate input
+        if (!body.desc) {
+            return new NextResponse(JSON.stringify({ error: 'Content is required' }), { status: 400 });
+        }
+
+        const comment = await prisma.comment.create({
+            data: {...body, userEmail: session.user.email},
+        });
+        return new NextResponse(JSON.stringify(comment), { status: 201 });
+    } catch (error) {
+        return new NextResponse(JSON.stringify({ error: error.message }), { status: 500 });
     }
 }
