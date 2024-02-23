@@ -5,7 +5,7 @@ import MenuCategories from "../menuCategories/MenuCategories";
 const Menu = () => {
   return (
     <div className={styles.container}>
-      <h3 className={styles.subtitle}>What's hot</h3>
+      <h3 className={styles.subtitle}>What&apos;s hot</h3>
       <h2 className={styles.title}>Most Popular</h2>
       <MenuPosts  />
 
@@ -14,7 +14,7 @@ const Menu = () => {
       <MenuCategories />
 
       <h3 className={styles.subtitle}>Chosen by the editor</h3>
-      <h2 className={styles.title}>Editor's pick</h2>
+      <h2 className={styles.title}>Editor&apos;s pick</h2>
       <MenuPosts withImage/>
 
     </div>
