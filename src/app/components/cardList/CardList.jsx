@@ -3,7 +3,6 @@ import Pagination from '../pagination/Pagination';
 import Card from "../card/Card";
 
 const getData = async ({ page, cat }) => {
-  console.log(`CardList: page: ${page}, cat: ${cat}`);
   const res = await fetch(`http://localhost:3000/api/posts?page=${page}&cat=${cat || ""}`, 
   {
     cache: "no-store",

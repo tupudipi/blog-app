@@ -35,7 +35,6 @@ const WritePage = () => {
               const data = await res.json();
               setRole(data.role);
             } catch (err) {
-              console.log(err);
             }
           }
         };
@@ -43,8 +42,6 @@ const WritePage = () => {
         fetchRole();
       }, [status, user]);
     
-      console.log('role', role);
-
     useEffect(() => {
         const storage = getStorage(app);
         const upload = () => {
@@ -122,7 +119,7 @@ const WritePage = () => {
             >
                 <option>Pick a post category</option>
                 <option value="style">style</option>
-                <option value="fashion">fashion</option>
+                <option value="leisure">leisure</option>
                 <option value="food">food</option>
                 <option value="culture">culture</option>
                 <option value="travel">travel</option>

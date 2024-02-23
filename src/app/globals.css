@@ -45,6 +45,9 @@ a{
     max-width: 1536px;
     margin: 0 auto;
     padding-inline: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 @media screen and (max-width: 1536px){

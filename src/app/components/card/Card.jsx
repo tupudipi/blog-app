@@ -18,8 +18,9 @@ const Card = ({ key, item }) => {
                 <Link href={`/posts/${item.slug}`}>
                     <h3>{item.title}</h3>
                 </Link>
-                <p className={styles.desc}>
-                    {item.desc.length > 100 ? item.desc.substring(0, 100) + "..." : item.desc}
+                <p
+                    className={styles.desc}
+                    dangerouslySetInnerHTML={{ __html: item.desc.length > 100 ? item.desc.substring(0, 100) + "..." : item.desc }}>
                 </p>
                 <Link href={`/posts/${item.slug}`}>
                     <span className={styles.link}>Read More</span>

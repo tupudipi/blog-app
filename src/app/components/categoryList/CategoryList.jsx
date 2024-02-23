@@ -3,13 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 
 const getData = async () => {
-  const res = await fetch("http://localhost:3000/api/categories", {
+  const res = await fetch("http://localhost:3000/api/topCats", {
     cache: "no-store",
   });
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
-  return await res.json();
+  const data = await res.json();
+  return data.categories;
 }
 
 const CategoryList = async () => {
@@ -27,10 +28,10 @@ const CategoryList = async () => {
           >
             {item.image &&
               <Image
-              src={`${item.image}`}
-              alt=""
-              width={32} height={32}
-              className={styles.image} />
+                src={`${item.image}`}
+                alt=""
+                width={32} height={32}
+                className={styles.image} />
             }
             {item.title}
           </Link>

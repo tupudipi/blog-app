@@ -1,5 +1,6 @@
-import styles from "./featured.module.css";
+import styles from "./featured.module.css"
 import Image from "next/image";
+import Link from "next/link";
 
 const Featured = () => {
   return (
@@ -13,12 +14,12 @@ const Featured = () => {
 
       <div className={styles.post}>
         <div className={styles.imgContainer}>
-          <Image src="/p1.jpeg" alt="" fill className={styles.image} />
+          <Image src="/p1.png" alt="" fill className={styles.image} />
         </div>
         <div className={styles.textContainer}>
           <h2 className={styles.postTitle}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, tempora eveniet?</h2>
           <p className={styles.postDesc}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi rerum nihil eum ab consectetur non necessitatibus, officia provident vel doloribus distinctio accusamus culpa, eius iusto soluta deleniti ullam eos harum.</p>
-          <button className={styles.button}>Read More</button>
+          <Link href={'/about'}><button className={styles.button}>Read More</button></Link>
         </div>
       </div>
     </div>

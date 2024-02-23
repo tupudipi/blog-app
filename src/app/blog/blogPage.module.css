@@ -3,6 +3,8 @@ color: white;
 padding: 5px 10px;
 text-align: center;
 text-transform: capitalize;
+/* this is a child of a flex parent with column direction. make this element take up the whole cross axisdimension */
+align-self: stretch;
 }
 
 .content {
@@ -33,4 +35,23 @@ text-transform: capitalize;
 .title.food{
     background-color: #7fb881de;
 }
+
+.imgContainer{
+    position: relative;
+    height: 350px;
+    width: 75%;
+}
+
+.img{
+    object-fit: cover;
+    /* make the image be displayed from its top -- cropping from the bottom  if necessary */
+    object-position: center;
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 

@@ -20,15 +20,12 @@ function AuthLinks() {
           const data = await res.json();
           setRole(data.role);
         } catch (err) {
-          console.log(err);
         }
       }
     };
 
     fetchRole();
   }, [status, user]);
-
-  console.log('role', role);
 
   return <>
     {status === 'unauthenticated' ? (
