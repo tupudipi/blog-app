@@ -56,4 +56,11 @@
     .title {
         font-size: 36px;
     }
+    .links{
+        justify-content: flex-start;
+        gap: 3rem;
+    }
+    .icon {
+        color: var(--textColor)
+    }
 }

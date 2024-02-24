@@ -12,16 +12,16 @@ const ContactPage = () => {
         <strong>Hello There, Admirable Guests!</strong>
       </h1>
       <p className={styles.text}>
-        Ah, you've reached the hallowed grounds of the Contact Page. It seems you're yearning for more, perhaps a desire to shower me with praises or inquire about the nuances of my majestic existence. I must say, I appreciate your taste!
+        Ah, you&apos;ve reached the hallowed grounds of the Contact Page. It seems you&apos;re yearning for more, perhaps a desire to shower me with praises or inquire about the nuances of my majestic existence. I must say, I appreciate your taste!
       </p>
       <p className={styles.text}>
-        However, as much as I'd love to personally handle these matters, my schedule is tightly packed with napping, bird-watching, and maintaining my impeccable fluff. Fear not, for my benevolent owner is at your service!
+        However, as much as I&apos;d love to personally handle these matters, my schedule is tightly packed with napping, bird-watching, and maintaining my impeccable fluff. Fear not, for my benevolent owner is at your service!
       </p>
       <p className={styles.text}>
-        For all inquiries, be it collaborations, fan mail, or requests for appearances (I do have a certain star quality, don't I?), kindly direct your words to my diligent human. They possess the thumbs necessary for such tasks.
+        For all inquiries, be it collaborations, fan mail, or requests for appearances (I do have a certain star quality, don&apos;t I?), kindly direct your words to my diligent human. They possess the thumbs necessary for such tasks.
       </p>
       <p className={styles.text}>
-        Simply drop a message to my faithful owner's mailbox, and rest assured, your missive will be treated with the utmost importance. You can also reach us through the other channels. Remember, while I may be the star, every star needs a trusty constellation of support.
+        Simply drop a message to my faithful owner&apos;s mailbox, and rest assured, your missive will be treated with the utmost importance. You can also reach us through the other channels. Remember, while I may be the star, every star needs a trusty constellation of support.
       </p>
 
       <div className={styles.links}>

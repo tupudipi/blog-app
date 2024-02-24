@@ -22,7 +22,7 @@ const MenuPosts = ({ withImage, curated }) => {
                 setPosts(data.posts);
             });
         }
-    }, []);
+    }, [curated]);
 
     return (
         <div className={styles.items}>
