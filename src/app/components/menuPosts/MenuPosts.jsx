@@ -10,13 +10,13 @@ const MenuPosts = ({ withImage, curated }) => {
 
     useEffect(() => {
         if (!curated) {
-        fetch('/api/topPosts')
+        fetch('http://localhost:3000/api/topPosts')
             .then(response => response.json())
             .then(data => {
                 setPosts(data.posts);
             });
         } else {
-        fetch('/api/curatedPosts')
+        fetch('http://localhost:3000/api/curatedPosts')
             .then(response => response.json())
             .then(data => {
                 setPosts(data.posts);

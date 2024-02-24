@@ -2,8 +2,7 @@ import prisma from "@/utils/connect";
 import { NextResponse } from "next/server";
 
 export const GET = async (req) => {
-  const fullUrl = `${req.headers['x-forwarded-proto']}://${req.headers.host}${req.url}`;
-  const { searchParams } = new URL(fullUrl);
+    const { searchParams } = new URL(req.url);
     const email = searchParams.get('email');
 
   if (!email) {
