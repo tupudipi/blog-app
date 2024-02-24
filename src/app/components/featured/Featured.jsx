@@ -17,8 +17,8 @@ const Featured = () => {
           <Image src="/p1.png" alt="" fill className={styles.image} />
         </div>
         <div className={styles.textContainer}>
-          <h2 className={styles.postTitle}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, tempora eveniet?</h2>
-          <p className={styles.postDesc}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi rerum nihil eum ab consectetur non necessitatibus, officia provident vel doloribus distinctio accusamus culpa, eius iusto soluta deleniti ullam eos harum.</p>
+          <h2 className={styles.postTitle}>Meow there! 🐾 Join me on a whisker-twitching adventure through my world of feline musings!</h2>
+          <p className={styles.postDesc}>Embark on a feline odyssey with yours truly! From the joy of morning cuddles to savoring the finest pâté, and reveling in the thrill of laser pointers, this is my cozy corner of the web. Explore the tales and the intriguing world behind these green eyes. Dive in and discover the purr-sonalities that make me the one and only Cico! 🐾✨</p>
           <Link href={'/about'}><button className={styles.button}>Read More</button></Link>
         </div>
       </div>

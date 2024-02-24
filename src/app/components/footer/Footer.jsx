@@ -1,6 +1,9 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./footer.module.css";
 import Image from 'next/image'
 import Link from 'next/link';
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
@@ -10,7 +13,24 @@ const Footer = () => {
           <Image src="/logo.png" alt="Cico Blog Logo" width={50} height={50} className={styles.logoImg}/>
           <h2 className={styles.logoText}>Cico Blog</h2>
         </div>
-        <p className={styles.description}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+        <p className={styles.description}>Paws and whiskers, thanks for wandering through my digital realm. Stay curious, stay cozy! 🐾✨</p>
+        <div className={styles.social}>
+        <Link href="mailto:tupudipi@gmail.com">
+          <i className={styles.icon}>
+            <FontAwesomeIcon icon={faEnvelope} />
+          </i>
+        </Link>
+        <Link href="https://www.linkedin.com/in/alexandru-stefan-tudor">
+          <i className={styles.icon}>
+            <FontAwesomeIcon icon={faLinkedin} />
+          </i>
+        </Link>
+        <Link href="https://github.com/tupudipi">
+          <i className={styles.icon}>
+            <FontAwesomeIcon icon={faGithub} />
+          </i>
+        </Link>
+      </div>
       </div>
 
       <div className={styles.links}>

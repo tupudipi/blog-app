@@ -49,7 +49,7 @@ export const POST = async (req) => {
   });
 
   // Role check
-  if (user.role !== 'expectedRole') {
+  if (user.role !== 'admin') {
     return new NextResponse(
       JSON.stringify({ message: "Unauthorized!" }, { status: 403 })
     );

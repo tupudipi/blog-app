@@ -50,6 +50,24 @@
     font-weight: bold;
 }
 
+.social{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-block: 1rem;
+    gap: 2rem;
+}
+
+.icon {
+    margin-inline: 0.75rem;
+    color: var(--softTextColor)
+}
+
+.icon:hover {
+    color: var(--textColor);
+}
+
+
 @media screen and (max-width: 1024px) {
     .links {
         gap: 50px;

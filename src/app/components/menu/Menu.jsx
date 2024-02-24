@@ -13,7 +13,7 @@ const Menu = () => {
       <h2 className={styles.title}>Categories</h2>
       <MenuCategories />
 
-      <h3 className={styles.subtitle}>Chosen by the editor</h3>
+      <h3 className={styles.subtitle}>Featured</h3>
       <h2 className={styles.title}>Editor&apos;s pick</h2>
       <MenuPosts withImage curated/>
 
