@@ -3,7 +3,8 @@ import prisma from "@/utils/connect";
 import { NextResponse } from "next/server";
 
 export const GET = async (req) => {
-  const { searchParams } = new URL(req.url);
+  const fullUrl = `${req.headers['x-forwarded-proto']}://${req.headers.host}${req.url}`;
+  const { searchParams } = new URL(fullUrl);
   const page = searchParams.get('page');
   const cat = searchParams.get('cat');
 

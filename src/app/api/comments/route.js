@@ -3,15 +3,16 @@ import prisma from "@/utils/connect";
 import { NextResponse } from "next/server";
 
 export const GET = async (req) => {
-    const { searchParams } = new URL(req.url);
+    const fullUrl = `${req.headers['x-forwarded-proto']}://${req.headers.host}${req.url}`;
+    const { searchParams } = new URL(fullUrl);
     const postSlug = searchParams.get('postSlug');
 
     try {
         const comments = await prisma.comment.findMany({
             where: {
-                ...(postSlug && {postSlug}),
+                ...(postSlug && { postSlug }),
             },
-            include: {user: true},
+            include: { user: true },
         });
         return new NextResponse(JSON.stringify(comments), { status: 200 });
     } catch (err) {
@@ -34,7 +35,7 @@ export const POST = async (req) => {
         }
 
         const comment = await prisma.comment.create({
-            data: {...body, userEmail: session.user.email},
+            data: { ...body, userEmail: session.user.email },
         });
         return new NextResponse(JSON.stringify(comment), { status: 201 });
     } catch (error) {
